@@ -13,7 +13,7 @@ stages:
   - job: 'Build'
     displayName: 'Build job'
     pool:
-      name: Codespace_self_hosted_agent
+      name: Linux
     steps:
     - task: Docker@2
       displayName: 'Build and push the image to container registry'
@@ -34,7 +34,7 @@ stages:
   - job: 'Deploy'
     displayName: 'Deploy job'
     pool:
-      name: Codespace_self_hosted_agent
+      name: Linux
     variables:
     - group: Release
     steps:
